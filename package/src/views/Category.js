@@ -14,7 +14,7 @@ function Category() {
   useEffect(() => {
     if (categoryName) {
       console.log("grazino category name: " + categoryName);
-      axios.get(`http://localhost:8000/category/type/${categoryName}/`, {
+      axios.get(`https://jellyfish-app-lfx7p.ondigitalocean.app/service2/category/type/${categoryName}/`, {
         headers: {
           'Authorization' : `${token}`,
           "Content-Type": "application/json"
@@ -28,7 +28,7 @@ function Category() {
           setCategoryID(categoryId);
           console.log("grazino category id: " + categoryId);
       // Fetch tricks for the specific category from the backend.
-      axios.get(`http://localhost:8000/categories/${categoryID}/tricks/`, {
+      axios.get(`https://jellyfish-app-lfx7p.ondigitalocean.app/service2/ategories/${categoryID}/tricks/`, {
         headers: {
           'Authorization' : `${token}`,
           "Content-Type": "application/json"

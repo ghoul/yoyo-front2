@@ -28,7 +28,7 @@ const OneTrick = () => { //{ userComment, onUpdateComment, onDeleteComment }
 
   const fetchComments = async () => {
     try {
-      const newCommentsResponse = await axios.get(`http://localhost:8000/categories/1/tricks/${trickId}/comments/`, {
+      const newCommentsResponse = await axios.get(`https://jellyfish-app-lfx7p.ondigitalocean.app/service2/categories/1/tricks/${trickId}/comments/`, {
         headers: {
           'Authorization' : `${token}`,
           "Content-Type": "application/json"
@@ -45,7 +45,7 @@ const OneTrick = () => { //{ userComment, onUpdateComment, onDeleteComment }
   useEffect(() => {
     if (trickId) {
       // Fetch tricks for the specific category from the backend.
-      axios.get(`http://localhost:8000/categories/1/tricks/${trickId}/`, {
+      axios.get(`https://jellyfish-app-lfx7p.ondigitalocean.app/service2/categories/1/tricks/${trickId}/`, {
         headers: {
           'Authorization' : `${token}`,
           "Content-Type": "application/json"
@@ -66,7 +66,7 @@ const OneTrick = () => { //{ userComment, onUpdateComment, onDeleteComment }
   
   
   const postComment = (commentt) => {
-    fetch(`http://localhost:8000/categories/1/tricks/${trickId}/comments/`, {
+    fetch(`https://jellyfish-app-lfx7p.ondigitalocean.app/service2/categories/1/tricks/${trickId}/comments/`, {
       method: "POST",
       headers: {
         'Authorization' : `${token}`,
@@ -83,7 +83,7 @@ const OneTrick = () => { //{ userComment, onUpdateComment, onDeleteComment }
     .then(data => {
       console.log("Response Body: ", data);
       // Fetch comments again after posting a new comment
-      axios.get(`http://localhost:8000/categories/1/tricks/${trickId}/comments/`, {
+      axios.get(`https://jellyfish-app-lfx7p.ondigitalocean.app/service2/categories/1/tricks/${trickId}/comments/`, {
         headers: {
           'Authorization' : `${token}`,
           "Content-Type": "application/json"
@@ -110,7 +110,7 @@ const OneTrick = () => { //{ userComment, onUpdateComment, onDeleteComment }
     };
     
 
-     fetch(`http://localhost:8000/categories/1/tricks/${trickId}/`, {
+     fetch(`https://jellyfish-app-lfx7p.ondigitalocean.app/service2/categories/1/tricks/${trickId}/`, {
         method: "DELETE",
         headers: {
           'Authorization' : `${token}`,
@@ -144,7 +144,7 @@ const OneTrick = () => { //{ userComment, onUpdateComment, onDeleteComment }
     };
     
 
-     fetch(`http://localhost:8000/categories/1/tricks/${trickId}/comments/${commentId}/`, {
+     fetch(`https://jellyfish-app-lfx7p.ondigitalocean.app/service2/categories/1/tricks/${trickId}/comments/${commentId}/`, {
         method: "DELETE",
         headers: {
           'Authorization' : `${token}`,

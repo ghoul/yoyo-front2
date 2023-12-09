@@ -33,7 +33,7 @@ const AddCategory = () => {
 
     console.log('Request Body: ', JSON.stringify(category));
 
-    fetch('http://localhost:8000/categories/', {
+    fetch('https://jellyfish-app-lfx7p.ondigitalocean.app/service2/categories/', {
       method: 'POST',
       headers: {
         'Authorization' : `${token}`,

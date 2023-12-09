@@ -32,7 +32,7 @@ export default function UpdateCategory() {
 
   const getCategory = (categoryId) => {
     fetch(
-      `http://localhost:8000/categories/${categoryId}/`,
+      `https://jellyfish-app-lfx7p.ondigitalocean.app/service2/categories/${categoryId}/`,
       {
         method: "GET",
         headers: {
@@ -66,7 +66,7 @@ export default function UpdateCategory() {
       type: titleInput,
     };
     console.log("viduj handle data" + category.title);
-    fetch(`http://localhost:8000/categories/${categoryId}/`, {
+    fetch(`https://jellyfish-app-lfx7p.ondigitalocean.app/service2/categories/${categoryId}/`, {
       method: "PUT", 
       headers: {
         'Authorization' : `${token}`,

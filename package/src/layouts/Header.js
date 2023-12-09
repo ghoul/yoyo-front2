@@ -32,7 +32,7 @@ const Header = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await fetch('http://localhost:8000/categories/', {
+      const response = await fetch('https://jellyfish-app-lfx7p.ondigitalocean.app/service2/categories/', {
         method: 'GET',  // Specify the GET method
         headers: {
           'Authorization' : `${token}`,

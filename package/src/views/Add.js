@@ -26,7 +26,7 @@ const Add = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch('http://localhost:8000/categories/', {
+        const response = await fetch('https://jellyfish-app-lfx7p.ondigitalocean.app/service2/categories/', {
           headers: {
             'Authorization' : `${token}`,
             "Content-Type": "application/json"
@@ -57,7 +57,7 @@ const Add = () => {
 
     console.log('Request Body: ', JSON.stringify(trick));
 
-    fetch(`http://localhost:8000/categories/${trick.category}/tricks/`, {
+    fetch(`https://jellyfish-app-lfx7p.ondigitalocean.app/service2/categories/${trick.category}/tricks/`, {
       method: 'POST',
       headers: {
         'Authorization' : `${token}`,

@@ -18,7 +18,7 @@ function LoginForm() {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch('http://localhost:8000/login/', {
+      const response = await fetch('https://jellyfish-app-lfx7p.ondigitalocean.app/service2/login/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

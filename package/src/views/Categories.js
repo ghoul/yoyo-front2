@@ -12,7 +12,7 @@ const CategoriesList = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch('http://localhost:8000/categories/', {
+        const response = await fetch('https://jellyfish-app-lfx7p.ondigitalocean.app/service2/categories/', {
           method: 'GET',
           headers: {
             'Authorization' : `${token}`,
@@ -30,7 +30,7 @@ const CategoriesList = () => {
   }, []);
 
   const deleteCategory = () => {
-    fetch(`http://localhost:8000/categories/${selectedCategoryId}/`, {
+    fetch(`https://jellyfish-app-lfx7p.ondigitalocean.app/service2/categories/${selectedCategoryId}/`, {
       method: 'DELETE',
       headers: {
         'Authorization' : `${token}`,

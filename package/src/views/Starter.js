@@ -16,7 +16,7 @@ const Starter = () => {
   useEffect(() => {
     startTransition(() => {
       axios
-        .get("http://localhost:8000/latests/")
+        .get("https://jellyfish-app-lfx7p.ondigitalocean.app/service2/latests/")
         .then(async (response) => {
           // Fetch video details and thumbnails for each trick
           const tricksWithThumbnails = await Promise.all(

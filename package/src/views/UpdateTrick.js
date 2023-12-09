@@ -37,7 +37,7 @@ export default function UpdateTrick() {
 
   const getTrick = (trickId) => {
     fetch(
-      `http://localhost:8000/categories/1/tricks/${trickId}/`,
+      `https://jellyfish-app-lfx7p.ondigitalocean.app/service2/categories/1/tricks/${trickId}/`,
       {
         method: "GET",
         headers: {
@@ -62,7 +62,7 @@ export default function UpdateTrick() {
     getTrick(id);
     const fetchCategories = async () => {
       try {
-        const response = await fetch('http://localhost:8000/categories/', {
+        const response = await fetch('https://jellyfish-app-lfx7p.ondigitalocean.app/service2/categories/', {
           method: 'GET',  // Specify the GET method
           headers: {
             // You can include headers like authorization tokens if needed
@@ -91,7 +91,7 @@ export default function UpdateTrick() {
       category: categoryInput
     };
     console.log("viduj handle data" + trick.link);
-    fetch(`http://localhost:8000/categories/1/tricks/${trickId}/`, { //tricks/edit/${trickId}/
+    fetch(`https://jellyfish-app-lfx7p.ondigitalocean.app/service2/categories/1/tricks/${trickId}/`, { //tricks/edit/${trickId}/
       method: "PUT", 
       headers: {
         'Authorization' : `${token}`,

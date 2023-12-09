@@ -32,7 +32,7 @@ export default function UpdateComment() {
   let token = localStorage.getItem('token'); 
   const getComment = (commentId) => {
     fetch(
-      `http://localhost:8000/categories/1/tricks/${trickId}/comments/${commentId}/`,
+      `https://jellyfish-app-lfx7p.ondigitalocean.app/service2/categories/1/tricks/${trickId}/comments/${commentId}/`,
       {
         method: "GET",
         headers: {
@@ -61,7 +61,7 @@ export default function UpdateComment() {
       text: descriptionInput,
     };
     console.log("viduj handle data" + comment.text);
-    fetch(`http://localhost:8000/categories/1/tricks/${trickId}/comments/${commentId}/`, { 
+    fetch(`https://jellyfish-app-lfx7p.ondigitalocean.app/service2/categories/1/tricks/${trickId}/comments/${commentId}/`, { 
       method: "PUT", 
       headers: {
         'Authorization' : `${token}`,
