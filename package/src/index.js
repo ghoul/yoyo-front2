@@ -56,7 +56,7 @@ import { createRoot } from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Loader from './layouts/loader/Loader';
-import { BrowserRouter as Router } from 'react-router-dom';
+import {  HashRouter as Router } from 'react-router-dom';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);

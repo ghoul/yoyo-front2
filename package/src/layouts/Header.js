@@ -131,11 +131,15 @@ const Header = () => {
             </DropdownToggle>
             <DropdownMenu end>
               {categories.map((category) => (
-                <DropdownItem key={category.id}>
-                  <Link to={`/category/${category.type}`} className="nav-link" style={{ color: 'black' }}>
-                    {category.type}
-                  </Link>
-                </DropdownItem>
+              <DropdownItem
+              tag={Link}
+              to={`/category/${category.type}`}
+              className="nav-link"
+              style={{ color: 'black' }}
+            >
+              {category.type}
+            </DropdownItem>
+            
               ))}
             </DropdownMenu>
           </UncontrolledDropdown>
