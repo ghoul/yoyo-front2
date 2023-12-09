@@ -28,7 +28,7 @@ function Category() {
           setCategoryID(categoryId);
           console.log("grazino category id: " + categoryId);
       // Fetch tricks for the specific category from the backend.
-      axios.get(`https://jellyfish-app-lfx7p.ondigitalocean.app/service2/ategories/${categoryID}/tricks/`, {
+      axios.get(`https://jellyfish-app-lfx7p.ondigitalocean.app/service2/categories/${categoryID}/tricks/`, {
         headers: {
           'Authorization' : `${token}`,
           "Content-Type": "application/json"

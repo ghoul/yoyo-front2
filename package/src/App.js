@@ -17,9 +17,7 @@ const App = () => {
 
   return (
     <div className="dark">
-      <Router>
         {routing}
-      </Router>
     </div>
   );
 };
