@@ -1,4 +1,4 @@
-import React from "react";
+import {React, startTransition} from "react";
 import { Redirect } from "react-router";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -60,6 +60,7 @@ export default function UpdateCategory() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    startTransition(() => {
     console.log("category id : " + categoryId);
     const category = {
       pk: categoryId,
@@ -75,7 +76,7 @@ export default function UpdateCategory() {
       },
       body: JSON.stringify(category),
       
-    })
+    })  })
     .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);

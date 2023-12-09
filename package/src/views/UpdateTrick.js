@@ -1,4 +1,4 @@
-import React from "react";
+import {React,startTransition} from "react";
 import { Redirect } from "react-router";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -82,6 +82,7 @@ export default function UpdateTrick() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    startTransition(() => {
     console.log("trick id : " + trickId);
     const trick = {
       pk: trickId,
@@ -99,7 +100,7 @@ export default function UpdateTrick() {
       },
       body: JSON.stringify(trick),
       
-    })
+    }) })
     .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);

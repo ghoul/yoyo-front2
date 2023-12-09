@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, startTransition } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Table } from 'reactstrap';
 import { Modal } from './Modal.js';
@@ -30,13 +30,14 @@ const CategoriesList = () => {
   }, []);
 
   const deleteCategory = () => {
+    startTransition(() => {
     fetch(`https://jellyfish-app-lfx7p.ondigitalocean.app/service2/categories/${selectedCategoryId}/`, {
       method: 'DELETE',
       headers: {
         'Authorization' : `${token}`,
         'Content-Type': 'application/json',
       },
-    })
+    }) })
     .then(response => {
       if (response.ok) {
         // If the response status is 204 (No Content), handle the deletion and update categories state

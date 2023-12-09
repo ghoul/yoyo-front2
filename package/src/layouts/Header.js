@@ -1,4 +1,4 @@
-import React, { useState, useEffect }  from "react";
+import React, { useState, useEffect, startTransition } from "react";
 import { Link } from "react-router-dom";
 import {
   Navbar,
@@ -71,8 +71,10 @@ const Header = () => {
   // };
 
   const handleLogout = () => {
-    localStorage.clear(); // Clear all items from localStorage
-    navigate('/login');
+    startTransition(() => {
+      localStorage.clear(); // Clear all items from localStorage
+      navigate('/login');
+    });
     
   };
 

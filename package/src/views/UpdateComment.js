@@ -1,4 +1,4 @@
-import React from "react";
+import {React,startTransition} from "react";
 import { Redirect } from "react-router";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -55,6 +55,7 @@ export default function UpdateComment() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    startTransition(() => {
     console.log("commentId id : " + commentId);
     const comment = {
       pk: commentId,
@@ -69,7 +70,7 @@ export default function UpdateComment() {
       },
       body: JSON.stringify(comment),
       
-    })
+    }) })
     .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);

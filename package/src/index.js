@@ -33,21 +33,42 @@
 // reportWebVitals();
 
 
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import App from './App';
+// import reportWebVitals from './reportWebVitals';
+// import Loader from './layouts/loader/Loader';
+// import { BrowserRouter as Router } from 'react-router-dom'; // Change to BrowserRouter
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <Router> {/* Use BrowserRouter */}
+//       <App />
+//     </Router>
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
+
+// reportWebVitals();
+
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Loader from './layouts/loader/Loader';
-import { BrowserRouter as Router } from 'react-router-dom'; // Change to BrowserRouter
+import { BrowserRouter as Router } from 'react-router-dom';
 
-ReactDOM.render(
+const rootElement = document.getElementById('root');
+const root = createRoot(rootElement);
+
+root.render(
   <React.StrictMode>
-    <Router> {/* Use BrowserRouter */}
+    <Router>
       <App />
     </Router>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
 
 reportWebVitals();
+
 

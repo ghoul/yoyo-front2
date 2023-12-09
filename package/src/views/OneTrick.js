@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, startTransition} from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -42,26 +42,28 @@ const OneTrick = () => { //{ userComment, onUpdateComment, onDeleteComment }
     }
   };
   
-  useEffect(() => {
-    if (trickId) {
-      // Fetch tricks for the specific category from the backend.
-      axios.get(`https://jellyfish-app-lfx7p.ondigitalocean.app/service2/categories/1/tricks/${trickId}/`, {
-        headers: {
-          'Authorization' : `${token}`,
-          "Content-Type": "application/json"
-        },
-      })
+  const fetchTrickData = async () => {
+    // Wrap the state updates within startTransition
+    startTransition(() => {
+      axios.get(`https://jellyfish-app-lfx7p.ondigitalocean.app/service2/categories/1/tricks/${trickId}/`)
         .then((response) => {
           setTrick(response.data);
+          // Update the comments after getting the trick data
+          fetchComments();
         })
         .catch((error) => {
           console.error('Error fetching trick data:', error);
         });
-  
-      // Call the fetchComments function to get initial and new comments
-      fetchComments();
+    });
+  };
+
+  useEffect(() => {
+    if (trickId) {
+      // Use startTransition for fetching trick data and comments
+      fetchTrickData();
     }
-  }, [trickId]); // Specify trickId as a dependency
+  }, [trickId]);
+
   
   
   

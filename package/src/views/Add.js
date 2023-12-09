@@ -45,7 +45,7 @@ const Add = () => {
     fetchCategories();
   }, []); // Run the effect only once after the initial render
 
-  const createTrick = (event) => {
+  const createTrick = async (event) => {
     event.preventDefault();
 
     const trick = {
@@ -57,31 +57,31 @@ const Add = () => {
 
     console.log('Request Body: ', JSON.stringify(trick));
 
-    fetch(`https://jellyfish-app-lfx7p.ondigitalocean.app/service2/categories/${trick.category}/tricks/`, {
-      method: 'POST',
-      headers: {
-        'Authorization' : `${token}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(trick),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('HTTP error ' + response.status);
-        }
-        return response.json();
-      })
-      .then((data) => {
+    try {
+      const response = await fetch(`https://jellyfish-app-lfx7p.ondigitalocean.app/service2/categories/${trick.category}/tricks/`, {
+        method: 'POST',
+        headers: {
+          'Authorization' : `${token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(trick),
+      });
+  
+      if (!response.ok) {
+        throw new Error('HTTP error ' + response.status);
+      }
+  
+      const data = await response.json();
+      console.log('Response Body: ', data);
         console.log('Response Body: ', data);
         setMessage(data.success ? 'Operacija sėkminga!' : 'Klaida! '+ data.error);
         setTimeout(() => {
           setMessage('');
         }, 3000);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error(error);
-        setMessage('Klaida!' + error.error);
-      });
+        setMessage('Error! ' + error.message);
+      }
   };
   const send = (event) => {
     navigate('/');
