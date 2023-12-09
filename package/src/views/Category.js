@@ -35,7 +35,7 @@ function Category() {
         },
       })
         .then(async (response) => {
-          console.log('response:', response.data); // Add this line for debugging
+          console.log('response:', response.data); // Add this line for debuggingaaa
 
           // Fetch video thumbnails for each trick
           const tricksWithThumbnails = await Promise.all(response.data.map(async (trick) => {
