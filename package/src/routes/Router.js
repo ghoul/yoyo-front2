@@ -1,32 +1,27 @@
-import { lazy } from "react";
-import { Navigate } from "react-router-dom";
 import OneTrick from "../views/OneTrick.js";
 import CategoriesList from "../views/Categories.js";
+import FullLayout from "../layouts/FullLayout.js"; 
 
-/****Layouts*****/
-const FullLayout = lazy(() => import("../layouts/FullLayout.js"));
 
-/***** Pages ****/
-
-const Starter = lazy(() => import("../views/Starter.js"));
-const Login = lazy(() => import("../views/Login.js"));
-const SignUp = lazy(() => import("../views/SignUp.js"));
-const Category = lazy(() => import("../views/Category.js"));
-const Trick = lazy(() => import("../views/OneTrick.js"));
-const UpdateTrick = lazy(() => import("../views/UpdateTrick.js"));
-const UpdateCategory = lazy(() => import("../views/UpdateCategory.js"));
-const UpdateComment = lazy(() => import("../views/UpdateComment.js"));
-const Add = lazy(() => import("../views/Add.js"));
-const AddCategory = lazy(() => import("../views/AddCategory.js"));
-const About = lazy(() => import("../views/About.js"));
-const Alerts = lazy(() => import("../views/ui/Alerts"));
-const Badges = lazy(() => import("../views/ui/Badges"));
-const Buttons = lazy(() => import("../views/ui/Buttons"));
-const Cards = lazy(() => import("../views/ui/Cards"));
-const Grid = lazy(() => import("../views/ui/Grid"));
-const Tables = lazy(() => import("../views/ui/Tables"));
-const Forms = lazy(() => import("../views/ui/Forms"));
-const Breadcrumbs = lazy(() => import("../views/ui/Breadcrumbs"));
+import Starter from "../views/Starter.js";
+import Login from "../views/Login.js";
+import SignUp from "../views/SignUp.js";
+import Category from "../views/Category.js";
+import Trick from "../views/OneTrick.js";
+import UpdateTrick from "../views/UpdateTrick.js";
+import UpdateCategory from "../views/UpdateCategory.js";
+import UpdateComment from "../views/UpdateComment.js";
+import Add from "../views/Add.js";
+import AddCategory from "../views/AddCategory.js";
+import About from "../views/About.js";
+import Alerts from "../views/ui/Alerts";
+import Badges from "../views/ui/Badges";
+import Buttons from "../views/ui/Buttons";
+import Cards from "../views/ui/Cards";
+import Grid from "../views/ui/Grid";
+import Tables from "../views/ui/Tables";
+import Forms from "../views/ui/Forms";
+import Breadcrumbs from "../views/ui/Breadcrumbs";
 
 
 /*****Routes******/
